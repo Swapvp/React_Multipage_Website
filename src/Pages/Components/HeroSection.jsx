@@ -1,16 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { Button } from "./Button";
+import { AppContext } from "../Context";
 
-const HeroSection = () => {
+const HeroSection = ({ name, image }) => {
+  const fname = useContext(AppContext);
   return (
     <Wrapper>
       <div className="container grid grid-two-column">
         <div className="section-hero-data">
           <p className="hero-top-data">THIS IS ME</p>
-          <h1 className="hero-heading">Swapnesh Pawar</h1>
-          <p className="hero-para">I'm   a Front end web developer.</p>
+          <h1 className="hero-heading">{name}</h1>
+          <p className="hero-para">I'm {fname} a Front end web developer.</p>
           <Button className="btn hireme-btn">
             <NavLink to="/contact"> hire me </NavLink>
           </Button>
@@ -19,11 +21,7 @@ const HeroSection = () => {
         {/* for image  */}
         <div className="section-hero-image">
           <picture>
-            <img
-              src="./images/hero.svg"
-              alt="hero image"
-              className="hero-img "
-            />
+            <img src={image} alt="hero image" className="hero-img " />
           </picture>
         </div>
       </div>
