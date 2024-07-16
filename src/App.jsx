@@ -9,6 +9,7 @@ import Header from "./Pages/Components/Header";
 import Footer from "./Pages/Components/Footer";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyle } from "./GlobalStyles";
+import GoToTop from "./Pages/Components/GoToTop";
 
 const App = () => {
   const theme = {
@@ -45,6 +46,7 @@ const App = () => {
             <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<Error />} />
           </Routes>
+          <GoToTop />
           <Footer />
         </BrowserRouter>
       </ThemeProvider>
